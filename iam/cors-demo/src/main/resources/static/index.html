@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CORS-DEMO</title>
+  <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+</head>
+<body>
+<script type='text/javascript'>
+  function funsubmit() {
+    var url = $("#url").val();
+    if (url == null || url == "") {
+      alert("认证门户接口地址不能为空");
+      return;
+    }
+    var method = $("#method").val();
+    if (method == null || method == "") {
+      alert("请求方法不能为空");
+      return;
+    }
+    $.ajax({
+      type: method,
+      url: url,
+      async: false,
+      success: function (result) {
+        alert(JSON.stringify(result));
+      },
+      error: function (XMLHttpRequest, textStatus, errorThrown) {
+        alert(textStatus);
+      },
+    });
+  }
+</script>
+</body>
+<form>
+  <table>
+    <tr>
+      <td>请求方法<td/>
+      <td><input type="text" size="70" name="method" id="method" value="POST"/></td>
+    </tr>
+    <tr>
+      <td>认证门户接口地址<td/>
+      <td><input type="text" size="70" name="url" id="url" value="http://t1.login.admin.idaas.com:8002/auth/access/check"/></td>
+    </tr>
+    <tr>
+      <td colspan="2"><button onclick="funsubmit()">提交</button></td>
+    </tr>
+  </table>
+</form>
+</html>

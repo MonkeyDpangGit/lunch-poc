@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>登录成功-OAuth2-implicit</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+  <link rel="stylesheet" href="http://jqueryui.com/resources/demos/style.css">
+  <style>
+    .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+      border: 1px solid #d3d3d3;
+      background: none;
+      font-weight: normal;
+      color: #555555;
+    }
+
+    .ui-accordion .ui-accordion-icons {
+      padding-left: 2.2em;
+      height: 40px;
+      line-height: 40px;
+    }
+
+    p, li {
+      font-size: 15px;
+      color: darkgray;
+    }
+  </style>
+  <script>
+    $(function () {
+      var icons = {
+        header: "ui-icon-circle-arrow-e",
+        activeHeader: "ui-icon-circle-arrow-s"
+      };
+      $("#accordion").accordion({
+        icons: icons,
+        heightStyle: "content"
+      });
+      $("#toggle").button().click(function () {
+        if ($("#accordion").accordion("option", "icons")) {
+          $("#accordion").accordion("option", "icons", null);
+        } else {
+          $("#accordion").accordion("option", "icons", icons);
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+<div style="width:1000px; position:absolute; left:50%; margin-left:-500px;">
+  <div style="margin-bottom: 15px;margin-top: 15px;">
+    <span><img src="images/ok.png" height="30" width="30"/></span>
+    <span style="font-size: 28px;font-weight: bold;">登录成功</span>
+  </div>
+  <div id="accordion">
+    <h3>步骤1：获取access_token</h3>
+    <div>
+      <p>
+        获取url中access_token参数值。
+      </p>
+    </div>
+    <h3>步骤2：获取用户信息</h3>
+    <div>
+      <p>
+        调用接口，携带access_token参数，请求获取用户信息。
+      </p>
+      <p>
+        <span>请求示例</span><br>
+        <span>curl -X GET \</span><br>
+        <span>'https://YOUR_TENANT_DOMAIN</span>
+        <span>/auth/oauth2/userinfo' \</span><br>
+        <span>-H 'Authorization: Bearer {ACCESS_TOKEN}</span>
+        <span>&redirect_uri=</span>
+        <span>' \</span><br>
+        <span>-H 'Content-Type: application/json'</span>
+      </p>
+      <p>
+        <span>返回示例</span><br>
+        <span>{</span><br>
+        <span>"sub": "10b99f39-8243-4900-956f-f6baceb4cb94",</span><br>
+        <span>"ou_id": "32a97f3a-7ca3-5812-871f-f7becea3ca63",</span><br>
+        <span>"phone_number": "150****8888",</span><br>
+        <span>"email": "150****8888@qq.com",</span><br>
+        <span>"username": "iamadmin",</span><br>
+        <span>"nickname": "iamadmin"</span><br>
+        <span>}</span>
+      </p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

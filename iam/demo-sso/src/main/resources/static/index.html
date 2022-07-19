@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>index</title>
+  <style type="text/css">
+    body {
+      font-size: 12px;
+    }
+
+    table, th, td {
+      border: 1px solid black;
+    }
+
+    table {
+      border-collapse: collapse;
+    }
+
+    td {
+      vertical-align: bottom;
+      padding: 5px;
+    }
+
+  </style>
+</head>
+<body>
+<div align="center">
+  <h3>发起登录</h3>
+  <form name="loginForm" action="/auth/login" method="get">
+    <table>
+      <tr>
+        <td>loginUrl</td>
+        <td>
+          <textarea name="loginUrl" cols="88" rows="4">http://<auth.domain>/auth/sso/ssoLogin?service=xxxxxxxxxxxx</textarea>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <input type="submit" name="loginBtn" value="提交"/>
+        </td>
+      </tr>
+    </table>
+  </form>
+  <h3>CAS验证票据</h3>
+  <form name="casValidateForm" action="/auth/cas/validate" method="get">
+    <table>
+      <tr>
+        <td>validateUrl</td>
+        <td>
+          <textarea name="validateUrl" cols="88" rows="2">http://<auth.domain>/auth/sso/cas/verify/xxxxxxxxxxxx</textarea>
+        </td>
+      </tr>
+      <tr>
+        <td>ticket</td>
+        <td>
+          <input type="text" name="ticket" size="100"/>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <input type="submit" name="validateBtn" value="提交"/>
+        </td>
+      </tr>
+    </table>
+  </form>
+  <h3>OAuth获取access_token</h3>
+  <form name="oauthAccessTokenForm" action="/auth/oauth/accessToken" method="post">
+    <table>
+      <tr>
+        <td>requetUrl</td>
+        <td colspan="3">
+          <textarea name="requestUrl" cols="88" rows="2">http://<auth.domain>/auth/oauth2/token</textarea>
+        </td>
+      </tr>
+      <tr>
+        <td>clientId</td>
+        <td><input type="text" name="clientId" size="40"/></td>
+        <td>clientSecret</td>
+        <td><input type="text" name="clientSecret" size="40"/></td>
+      </tr>
+      <tr>
+        <td>grantType</td>
+        <td><input type="text" name="grantType" size="40"/></td>
+        <td>redirectUri</td>
+        <td><input type="text" name="redirectUri" size="40"/></td>
+      </tr>
+      <tr>
+        <td>codeVerifier</td>
+        <td><input type="text" name="codeVerifier" size="40"/></td>
+        <td>code</td>
+        <td><input type="text" name="code" size="40"/></td>
+      </tr>
+      <tr>
+        <td>username</td>
+        <td><input type="text" name="username" size="40"/></td>
+        <td>password</td>
+        <td><input type="text" name="password" size="40"/></td>
+      </tr>
+      <tr>
+        <td>bindingCode</td>
+        <td><input type="text" name="bindingCode" size="40"/></td>
+        <td>refreshToken</td>
+        <td><input type="text" name="refreshToken" size="40"/></td>
+      </tr>
+      <tr>
+        <td colspan="4">
+          <input type="submit" name="accessTokenBtn" value="提交"/>
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>
+</body>
+</html>
