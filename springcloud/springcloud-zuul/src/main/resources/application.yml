@@ -1,0 +1,21 @@
+server:
+  port: 8703
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:8700/eureka
+  instance:
+    hostname: localhost
+
+spring:
+  application:
+    name: springcloud-zuul
+
+zuul:
+#  routes:
+#    provider1:
+#      path: /provider1/**
+#      serviceId: springcloud-provider
+  sensitive-headers: cookie
+  prefix: /api
