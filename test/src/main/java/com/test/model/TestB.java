@@ -1,4 +1,4 @@
-package com.test.pojo;
+package com.test.model;
 
 /**
  * TestB

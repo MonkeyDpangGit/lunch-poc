@@ -1,4 +1,4 @@
-package com.test;
+package com.test.domain.prometheus;
 
 import io.prometheus.client.Counter;
 import javax.servlet.http.HttpServletRequest;

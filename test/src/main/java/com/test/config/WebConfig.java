@@ -1,6 +1,6 @@
-package com.test;
+package com.test.config;
 
-import org.springframework.context.annotation.Configuration;
+import com.test.domain.prometheus.PrometheusInterceptor;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 

@@ -1,6 +1,6 @@
 package com.test.dao;
 
-import com.test.pojo.Test;
+import com.test.model.Test;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 

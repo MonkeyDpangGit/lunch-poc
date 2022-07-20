@@ -1,7 +1,7 @@
 package com.test.service;
 
 import com.test.dao.TestRepository;
-import com.test.pojo.Test;
+import com.test.model.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
