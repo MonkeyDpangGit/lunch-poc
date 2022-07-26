@@ -15,7 +15,7 @@ import java.util.Iterator;
  *
  * @author torrisli
  * @date 2022/7/25
- * @Description: GroupChatServer
+ * @Description: https://blog.csdn.net/qq_44961149/article/details/108716215
  */
 public class GroupChatServer {
 
