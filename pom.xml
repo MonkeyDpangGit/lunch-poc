@@ -15,6 +15,7 @@
         <module>apimock</module>
         <module>dubbo</module>
         <module>springcloud</module>
+        <module>oauth2</module>
     </modules>
     <packaging>pom</packaging>
 
