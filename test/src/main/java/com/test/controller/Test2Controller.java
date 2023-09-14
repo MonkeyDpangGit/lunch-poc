@@ -51,6 +51,7 @@ public class Test2Controller {
 
         Map output = new LinkedHashMap();
         output.put("success", "ok");
+        output.put("flag", true);
         output.put("query", request.getQueryString());
         output.put("method", request.getMethod());
 
@@ -69,7 +70,9 @@ public class Test2Controller {
             inputStream = request.getInputStream();
             byte[] buffer = new byte[inputStream.available()];
             IOUtils.readFully(inputStream, buffer);
-            output.put("body", buffer);
+            output.put("body", new String(buffer));
+
+            System.out.println(output.toString());
 
             return new ResponseEntity(output, HttpStatus.OK);
         } finally {
