@@ -52,6 +52,7 @@ public class Test2Controller {
         Map output = new LinkedHashMap();
         output.put("success", "ok");
         output.put("query", request.getQueryString());
+        output.put("method", request.getMethod());
 
         HttpHeaders headers = new HttpHeaders();
         Enumeration<String> headerEnumeration = request.getHeaderNames();
