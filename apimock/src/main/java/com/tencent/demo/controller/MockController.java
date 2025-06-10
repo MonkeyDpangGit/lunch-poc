@@ -72,4 +72,10 @@ public class MockController {
 
         return "<form action=\"/tickets/TGT-1-1052555-1Ih5FPlOpyf0lD2X2qmdTHeeylDsWC\" method=\"post\">";
     }
+
+    @RequestMapping(value = "/isc_sso/test", method = {RequestMethod.GET, RequestMethod.POST})
+    public String test(HttpServletRequest request, HttpServletResponse response) {
+
+        return "ok";
+    }
 }
